@@ -14,7 +14,7 @@
         background-color: #f8f9fb;
         border: 1px solid var(--color-tertiary);
 
-        svg {
+        .icon--lock {
             align-self: center;
             margin-bottom: 16px;
         }
@@ -55,6 +55,13 @@
 
         button {
             margin-top: 24px;
+
+        }
+    }
+
+    .icon--spinner {
+        path {
+            fill: var(--color-white);
         }
     }
 }                                   

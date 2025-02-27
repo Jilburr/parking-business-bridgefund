@@ -44,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 import { parkingService } from '~/services/parkingService';
 
 const emit = defineEmits(['success']);

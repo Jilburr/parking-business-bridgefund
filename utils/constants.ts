@@ -40,5 +40,7 @@ export const API_ERRORS = {
  * Success messages
  */
 export const SUCCESS_MESSAGES = {
-  SESSION_ENDED: 'Parking session ended successfully.'
+  SESSION_ENDED: 'Parking session ended successfully.',
+  LOGIN_SUCCESS: 'Login successful.',
+  LOGOUT_SUCCESS: 'Logout successful.'
 } as const; 

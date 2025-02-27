@@ -1,46 +1,47 @@
 .btn {
-    border-radius: 4px;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &:disabled {
-        background-color: #e0e0e0;
-        cursor: not-allowed;
+  &:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-quinary);
     }
-    
-    &--primary {
-        background-color: var(--color-secondary);
-        color: var(--color-white);
+  }
 
-        &:hover {
-            background-color:rgba(var(--color-secondary), 0.7);
-        }
+  &--secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-tertiary);
     }
+  }
 
-    &--secondary {
-        background-color: var(--color-white);
-        color: var(--color-primary);
-        border: 1px solid var(--color-primary);
+  &--abort {
+    background-color: var(--color-red);
+    color: var(--color-white);
 
-        &:hover {
-            background-color: var(--color-tertiary);
-        }
+    &:hover {
+      background-color: rgba(var(--color-red), 0.7);
     }
+  }
 
-    &--abort {
-        background-color: var(--color-red);
-        color: var(--color-white);
-
-        &:hover {
-            background-color: rgba(var(--color-red), 0.7);
-        }
-    }
-
-    &--icon {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
+  &--icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }

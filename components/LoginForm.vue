@@ -12,52 +12,35 @@
                 <input type="password" id="password" v-model="password" aria-label="Password" aria-required="true" placeholder="Enter your password" required class="w-full" />
             </div>
             <button type="submit" class="btn btn--primary">
-                Sign in
+                <template v-if="isLoading" aria-hidden="true">
+                    <SvgIconSpinner />
+                </template>
+                <template v-else>Sign in</template>
             </button>
         </form>
     </div>
 </template>
 
 <script setup lang="ts">
+import { loginService } from '~/services/loginSevice';
+
 const email = ref('')
 const password = ref('')
 const router = useRouter();
-const config = useRuntimeConfig();
+
+const isLoading = ref(false);
+
 const login = async () => {
+    isLoading.value = true;
     try {
-        const response = await fetch(`${config.public.apiBase}/auth/password`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: email.value,
-                password: password.value
-            })
-        })
-
-        const data = await response.json()
-
-        if (response.status === 201) {
-            if (data.data?.auth?.accessToken) {
-                const token = {
-                    value: data.data.auth.accessToken,
-                    expiresAt: Date.now() / 1000 + data.data.auth.expiresIn
-                }
-                localStorage.setItem("authToken", JSON.stringify(token));
-                alert("Login is successful");
-                router.push("/")
-            } else {
-                console.error('Token structure:', data);
-                throw new Error('Token not found in response');
-            }
-        } else {
-            console.log("Login failed:", data.status?.message || "Unknown error");
-            alert("Username or password is invalid");
+        const login = await loginService.login(email.value, password.value);
+        console.log('login', login);
+        if (login) {
+            console.log('login successTRUEEEE');
+            router.push("/")
         }
-    } catch (error) {
-        console.error("Error during login:", error);
-        alert("Error during login. Please try again.");
+    } finally {
+        isLoading.value = false;
     }
 }
 </script>

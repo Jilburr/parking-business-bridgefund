@@ -77,6 +77,7 @@ class ParkingService {
   /**
    * Process raw sessions from API
    */
+  
   private processSessions(rawSessions: ApiParkingSession[]): ParkingSession[] {
     return rawSessions.map((session: ApiParkingSession): ParkingSession => {
       // Parse dates and add rate
