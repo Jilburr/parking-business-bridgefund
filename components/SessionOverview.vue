@@ -1,6 +1,6 @@
 <template>
     <section class="session-overview">
-        <div class="container">
+        <div class="container container--margin">
             <div class="session-overview__header">
                 <h2 id="sessions-heading">Sessions Overview</h2>
 
@@ -178,25 +178,3 @@ onMounted(async () => {
     await fetchSessions();
 });
 </script>
-
-<style scoped>
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.session-overview__loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-</style>

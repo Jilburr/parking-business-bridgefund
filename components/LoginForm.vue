@@ -11,7 +11,7 @@
                 <label aria-label="Password" for="password">Password</label>
                 <input type="password" id="password" v-model="password" aria-label="Password" aria-required="true" placeholder="Enter your password" required class="w-full" />
             </div>
-            <button type="submit" class="btn btn--primary">
+            <button type="submit" class="btn btn--primary" :disabled="isLoading">
                 <template v-if="isLoading" aria-hidden="true">
                     <SvgIconSpinner />
                 </template>
@@ -34,9 +34,7 @@ const login = async () => {
     isLoading.value = true;
     try {
         const login = await loginService.login(email.value, password.value);
-        console.log('login', login);
         if (login) {
-            console.log('login successTRUEEEE');
             router.push("/")
         }
     } finally {

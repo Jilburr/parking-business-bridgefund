@@ -19,16 +19,13 @@ const checkAuth = () => {
         const currentTime = Date.now() / 1000;
         const expiresAt = token.expiresAt;
         if (currentTime > expiresAt) {
-            console.log("Token expired");
             isAuthenticated.value = false;
             localStorage.removeItem("authToken");
             router.push("/login");
         } else {
-            console.log("Token is valid");
             isAuthenticated.value = true;
         }
     } else {
-        console.log("No token found");
         isAuthenticated.value = false;
         router.push("/login");
     }

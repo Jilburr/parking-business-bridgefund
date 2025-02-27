@@ -1,6 +1,6 @@
 <template>
     <section class="parking-building">
-        <div class="container">
+        <div class="container container--margin">
             <h2 class="section__heading">Dashboard<span class="badge badge--danger" aria-label="Live status">Live</span>
             </h2>
             <details open>

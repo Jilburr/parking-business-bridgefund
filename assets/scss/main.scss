@@ -6,6 +6,7 @@
 @use 'base/layout';
 @use 'base/typography';
 @use 'base/font';
+@use 'base/helpers';
 
 // Elements
 @use 'elements/button';
@@ -21,3 +22,4 @@
 @use 'components/sessiontable';
 @use 'components/sessionlist';
 @use 'components/sessionoverview';
+@use 'components/dialog';

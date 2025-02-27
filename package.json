@@ -22,5 +22,8 @@
     "onlyBuiltDependencies": [
       "vue-demi"
     ]
+  },
+  "engines": {
+    "node": ">=18.17.1"
   }
 }

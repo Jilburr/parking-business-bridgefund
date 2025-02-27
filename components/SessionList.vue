@@ -11,14 +11,14 @@
             <summary class="session-list__summary">
                 <span 
                     v-if="session.isSessionEnded" 
-                    class="session-list__status session-list__status--ended"
+                    class="session-list__status"
                     aria-label="Session ended"
                 >
                     <SvgIconCheck aria-hidden="true" />
                 </span>
                 <span 
                     v-else 
-                    class="session-list__status session-list__status--active"
+                    class="session-list__status"
                     aria-label="Session in progress"
                 >
                     <SvgIconSpinner aria-hidden="true" />
@@ -122,91 +122,5 @@ const getParkingSpaceName = (parkingSpaceId: number): string => {
 </script>
 
 <style scoped>
-.session-list {
-    margin-bottom: 2rem;
-}
 
-.session-list__empty {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-}
-
-.session-list__item {
-    margin-bottom: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.session-list__summary {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    position: relative;
-}
-
-.session-list__summary::-webkit-details-marker {
-    display: none;
-}
-
-.session-list__status {
-    margin-right: 1rem;
-}
-
-.session-list__status--ended {
-    color: #67c23a;
-}
-
-.session-list__status--active {
-    color: #409eff;
-}
-
-.session-list__title {
-    margin: 0 1rem 0 0;
-    font-size: 1.1rem;
-}
-
-.session-list__info {
-    margin: 0 1rem 0 0;
-    font-size: 0.9rem;
-}
-
-.session-list__label {
-    font-weight: 500;
-}
-
-.session-list__details {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    background-color: #fff;
-}
-
-.session-list__detail-item {
-    margin-bottom: 0.5rem;
-}
-
-.session-list__detail-label {
-    display: block;
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 0.25rem;
-}
-
-.session-list__detail-value {
-    margin: 0;
-    font-weight: 500;
-}
-
-.session-list__actions {
-    grid-column: 1 / -1;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
-}
 </style>

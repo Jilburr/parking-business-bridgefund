@@ -1,26 +1,64 @@
 @use '../mixins/rem' as *;
 
 .session-filters {
-    margin-bottom: rem(16);
+    margin-bottom: rem(24);
     padding: rem(16);
     border: 1px solid var(--color-tertiary);
     border-radius: rem(4);
+    background-color: #f9f9f9;
+    display: none;
 
     &.active {
-        padding: rem(40);
-        height: auto;
-        visibility: visible;
-        opacity: 1;
+        display: block;
     }
+
     form {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: rem(16);
     }
-    .filter-actions {
+
+    &__actions {
+        margin-top: rem(16);
         display: flex;
-        grid-column: 1 / 1;
+        justify-content: flex-end;
+    }
+
+    &__heading {
+        margin-top: 0;
+        margin-bottom: rem(16);
+    }
+    
+    &__group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: rem(8);
+    }
+    
+    &__control {
+        margin-bottom: rem(16);
+    }
+    
+    &__control label {
+        display: block;
+        margin-bottom: rem(8);
+        font-weight: 500;
+    }
+    
+    &__control select,
+    &__control input[type="date"] {
+        width: 100%;
+        padding: rem(8);
+        border: 1px solid var(--color-tertiary);
+        border-radius: rem(4);
+    }
+    
+    &__help {
+        display: block;
         margin-top: rem(8);
+        color: #666;
+        font-size: rem(12);
     }
 
     /* When filters are hidden */
@@ -28,5 +66,3 @@
         display: none;
     }
 }
-
-
