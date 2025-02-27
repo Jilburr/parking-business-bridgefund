@@ -89,7 +89,6 @@ class ApiService {
    * Make a login POST request
    */
   async postLogin<T>(endpoint: string, body: any): Promise<T> {
-    console.log('postLogin', body);
     try {
       return await $fetch<T>(`${this.getBaseUrl()}${endpoint}`, {
         method: 'POST',

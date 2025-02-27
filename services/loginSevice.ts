@@ -4,8 +4,10 @@ import { API_ERRORS, SUCCESS_MESSAGES } from "~/utils/constants";
 import { setBearer } from "~/utils/setBearer";
 // Define API response interface for login
 export interface ApiResponseLogin {
-    value: string;
-    expiresAt: number;
+    auth: {
+        accessToken: string;
+        expiresIn: number;
+    }
 }
 
 class AuthService {
@@ -21,7 +23,6 @@ class AuthService {
         });
 
 		this.setToken(response.data);
-		console.log('login response', response);
 		toastService.success(SUCCESS_MESSAGES.LOGIN_SUCCESS);
 		return response.data;
     } catch (error) {
@@ -32,7 +33,6 @@ class AuthService {
   }
 
   private setToken(data: ApiResponseLogin) {
-	console.log('setToken', data);
 	setBearer(data);
   }
 }
