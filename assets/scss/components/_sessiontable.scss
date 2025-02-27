@@ -1,0 +1,36 @@
+.session-table {
+    border: 1px solid var(--color-tertiary);
+    border-radius: 10px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+            tr {
+                border-bottom: 2px solid var(--color-tertiary);
+                th {
+                    padding: 8px;
+                    text-align: left;
+
+                    @media (min-width: 1024px) {
+                        padding: 14px 24px;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid var(--color-tertiary);
+                td {
+                    padding: 8px;
+
+                    @media (min-width: 1024px) {
+                        padding: 14px 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon {
+    &--spinner {
+        animation: spinner 1.7s ease-in-out infinite;
+    }
+}
+
+details {
+    .icon--chevron {
+        transition: transform 0.3s ease-in-out;
+    }
+    &[open] {
+        .icon--chevron {
+            transform: rotate(180deg);
+        }
+    }
+}

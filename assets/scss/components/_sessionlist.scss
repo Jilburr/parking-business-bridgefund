@@ -1,0 +1,43 @@
+.session-list {
+    details {
+        border: none;
+        border-bottom: 1px solid var(--color-tertiary);
+        padding: 10px;
+        background-color: none;
+        transition: background-color 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:not([open]) {
+            &:hover {
+                background-color: var(--color-tertiary);
+            }
+        }
+
+        summary {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 24px;
+
+            .icon--chevron {
+                margin-left: auto;
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+    
+    &__empty {
+        text-align: center;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+    }
+    
+    &__actions {
+        margin-top: 1rem;
+    }
+}

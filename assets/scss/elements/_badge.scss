@@ -1,0 +1,21 @@
+.badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    text-transform: uppercase;
+
+    &--warning {
+        background-color: var(--color-yellow);
+    }
+
+    &--success {
+        background-color: var(--color-green);
+    }
+
+    &--danger {
+        background-color: var(--color-red);
+    }
+}
