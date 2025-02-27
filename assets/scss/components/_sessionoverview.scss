@@ -1,9 +1,10 @@
-.session-overview {
+@use '../mixins/rem' as *;
 
+.session-overview {
     &__actions {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: rem(8);
     }
 
     &__filter-toggle {
@@ -19,10 +20,10 @@
     &__view-toggle {
         display: flex;
         border: 1px solid var(--color-tertiary);
-        border-radius: 0.5rem;
+        border-radius: rem(8);
         button {
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem 0 0 0.5rem;
+            padding: rem(8) rem(12);
+            border-radius: rem(8) 0 0 rem(8);
             background: none;
             border: none;
             cursor: pointer;
@@ -42,7 +43,7 @@
                 background-color: var(--color-secondary);
             }
             &:last-child {
-                border-radius: 0 0.5rem 0.5rem 0;
+                border-radius: 0 rem(8) rem(8) 0;
             }
         }
     }

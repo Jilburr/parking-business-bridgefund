@@ -1,3 +1,5 @@
+@use '../mixins/rem' as *;
+
 .header {
     border-bottom: 1px solid var(--color-tertiary);
     &__inner {
@@ -9,12 +11,12 @@
     &__menu {
         ul {
             display: flex;
-            gap: 20px;
+            gap: rem(20);
             list-style: none;
 
             li {
                 a {
-                    font-size: 14px;
+                    font-size: rem(14);
                 }
             }
         }

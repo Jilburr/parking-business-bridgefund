@@ -1,6 +1,8 @@
+@use '../mixins/rem' as *;
+
 .parking-space {
   display: grid;
-  gap: 10px;
+  gap: rem(10);
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -9,14 +11,14 @@
   h4 {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: rem(10);
   }
 
   &__column {
     flex-grow: 1;
-    padding: 20px;
+    padding: rem(20);
     border: 1px solid var(--color-tertiary);
-    border-radius: 5px;
+    border-radius: rem(5);
     transform: translateY(0);
     box-shadow: none;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -29,7 +31,7 @@
 
   &__info {
     display: flex;
-    gap: 20px;
+    gap: rem(20);
 
     p {
       span {
@@ -40,11 +42,11 @@
 
   &__bar {
     height: 10px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
+    background-color: var(--color-tertiary);
+    border-radius: rem(5);
 
     &-fill {
-      background-color: #2b7fff;
+      background-color: var(--color-secondary);
     }
   }
 }

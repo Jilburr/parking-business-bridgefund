@@ -1,0 +1,54 @@
+@use '../mixins/rem' as *;
+
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    max-width: 350px;
+    padding: rem(16);
+    border-radius: rem(4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slide-in 0.3s ease-out;
+    
+    &--success {
+       background-color: var(--color-tertiary);
+       border-left: 4px solid var(--color-green);
+     }
+     
+    &--error {
+       background-color: var(--color-tertiary);
+       border-left: 4px solid var(--color-yellow);
+     }
+     
+    &--info {
+       background-color: var(--color-tertiary);
+       border-left: 4px solid var(--color-quinary);
+     }
+     
+    &__content {
+       display: flex;
+       align-items: flex-start;
+     }
+     
+    &__icon {
+       margin-right: rem(12);
+       display: flex;
+       align-items: center;
+     }
+     
+    &__message {
+       flex: 1;
+     }
+     
+    &__close {
+       position: absolute;
+       top: 8px;
+       right: 8px;
+       background: transparent;
+       border: none;
+       font-size: rem(16);
+       cursor: pointer;
+       color: var(--color-quinary);
+     }
+  }

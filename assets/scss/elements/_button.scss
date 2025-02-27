@@ -1,6 +1,8 @@
+@use '../mixins/rem' as *;
+
 .btn {
-  border-radius: 4px;
-  padding: 8px 16px;
+  border-radius: rem(4);
+  padding: rem(8) rem(16);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -42,6 +44,6 @@
   &--icon {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: rem(8);
   }
 }
