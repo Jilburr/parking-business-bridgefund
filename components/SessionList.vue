@@ -46,7 +46,14 @@
                 </div>
                 <div class="session-list__detail-item">
                     <label class="session-list__detail-label">Parking Duration</label>
-                    <p class="session-list__detail-value">{{ formatDuration(session.sessionLengthInHoursMinutes) }}</p>
+                    <p class="session-list__detail-value">
+                        <template v-if="session.isSessionEnded">
+                            {{ formatDuration(session.sessionLengthInHoursMinutes) }}
+                        </template>
+                        <template v-else>
+                            Ongoing
+                        </template>
+                    </p>
                 </div>
                 <div class="session-list__detail-item">
                     <label class="session-list__detail-label">Parking Rate</label>
@@ -54,7 +61,14 @@
                 </div>
                 <div class="session-list__detail-item">
                     <label class="session-list__detail-label">Total Price</label>
-                    <p class="session-list__detail-value">€{{ calculateTotalPrice(session) }},-</p>
+                    <p class="session-list__detail-value">
+                        <template v-if="session.isSessionEnded">
+                            €{{ calculateTotalPrice(session) }},-
+                        </template>
+                        <template v-else>
+                            Ongoing
+                        </template>
+                    </p>
                 </div>
                 <div v-if="!session.isSessionEnded" class="session-list__actions">
                     <SessionEnd 

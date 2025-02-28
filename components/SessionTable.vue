@@ -42,8 +42,22 @@
                     <td>{{ session.sessionEndedAt ? formatDate(session.sessionEndedAt) : 'Ongoing' }}</td>
                     <td>{{ getParkingSpaceName(session.parkingSpaceId) }}</td>
                     <td>€{{ session.rate }},-</td>
-                    <td>{{ formatDuration(session.sessionLengthInHoursMinutes) }}</td>
-                    <td>€{{ calculateTotalPrice(session) }},-</td>
+                    <td>
+                        <template v-if="session.isSessionEnded">
+                            {{ formatDuration(session.sessionLengthInHoursMinutes) }}
+                        </template>
+                        <template v-else>
+                            Ongoing
+                        </template>
+                    </td>
+                    <td>
+                        <template v-if="session.isSessionEnded">
+                            €{{ calculateTotalPrice(session) }},-
+                        </template>
+                        <template v-else>
+                            Ongoing
+                        </template>
+                    </td>
                     <td>
                         <SessionEnd 
                             v-if="!session.isSessionEnded" 

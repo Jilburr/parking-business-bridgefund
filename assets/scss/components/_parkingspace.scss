@@ -1,4 +1,4 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .parking-space {
   display: grid;
@@ -9,18 +9,18 @@
   }
 
   h4 {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: rem(10);
   }
 
   &__column {
+    border-radius: rem(5);
+    border: 1px solid var(--color-tertiary);
+    box-shadow: none;
     flex-grow: 1;
     padding: rem(20);
-    border: 1px solid var(--color-tertiary);
-    border-radius: rem(5);
     transform: translateY(0);
-    box-shadow: none;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     &:hover {
@@ -41,9 +41,9 @@
   }
 
   &__bar {
-    height: 10px;
     background-color: var(--color-tertiary);
     border-radius: rem(5);
+    height: 10px;
 
     &-fill {
       background-color: var(--color-secondary);

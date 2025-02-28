@@ -1,23 +1,23 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .badge {
-    padding: rem(5) rem(10);
-    border-radius: rem(5);
-    font-size: rem(8);
-    font-weight: 700;
-    color: var(--color-white);
-    background-color: var(--color-primary);
-    text-transform: uppercase;
+  background-color: var(--color-primary);
+  border-radius: rem(5);
+  color: var(--color-white);
+  font-size: rem(8);
+  font-weight: 700;
+  padding: rem(5) rem(10);
+  text-transform: uppercase;
 
-    &--warning {
-        background-color: var(--color-yellow);
-    }
+  &--warning {
+    background-color: var(--color-yellow);
+  }
 
-    &--success {
-        background-color: var(--color-green);
-    }
+  &--success {
+    background-color: var(--color-green);
+  }
 
-    &--danger {
-        background-color: var(--color-red);
-    }
+  &--danger {
+    background-color: var(--color-red);
+  }
 }

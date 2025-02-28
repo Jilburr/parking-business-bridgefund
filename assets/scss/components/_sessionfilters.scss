@@ -1,68 +1,68 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .session-filters {
-    margin-bottom: rem(24);
-    padding: rem(16);
-    border: 1px solid var(--color-tertiary);
+  background-color: #f9f9f9;
+  border-radius: rem(4);
+  border: 1px solid var(--color-tertiary);
+  display: none;
+  margin-bottom: rem(24);
+  padding: rem(16);
+
+  &.active {
+    display: block;
+  }
+
+  form {
+    display: grid;
+    gap: rem(16);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  &__actions {
+    display: flex;
+    margin-top: rem(16);
+    justify-content: flex-end;
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: rem(16);
+  }
+
+  &__group {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__control {
+    margin-bottom: rem(16);
+  }
+
+  &__control label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: rem(8);
+  }
+
+  &__control select,
+  &__control input[type="date"] {
     border-radius: rem(4);
-    background-color: #f9f9f9;
+    border: 1px solid var(--color-tertiary);
+    padding: rem(8);
+    width: 100%;
+  }
+
+  &__help {
+    color: #666;
+    display: block;
+    font-size: rem(12);
+    margin-top: rem(8);
+  }
+
+  /* When filters are hidden */
+  &:not(.active) {
     display: none;
-
-    &.active {
-        display: block;
-    }
-
-    form {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: rem(16);
-    }
-
-    &__actions {
-        margin-top: rem(16);
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    &__heading {
-        margin-top: 0;
-        margin-bottom: rem(16);
-    }
-    
-    &__group {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: rem(8);
-    }
-    
-    &__control {
-        margin-bottom: rem(16);
-    }
-    
-    &__control label {
-        display: block;
-        margin-bottom: rem(8);
-        font-weight: 500;
-    }
-    
-    &__control select,
-    &__control input[type="date"] {
-        width: 100%;
-        padding: rem(8);
-        border: 1px solid var(--color-tertiary);
-        border-radius: rem(4);
-    }
-    
-    &__help {
-        display: block;
-        margin-top: rem(8);
-        color: #666;
-        font-size: rem(12);
-    }
-
-    /* When filters are hidden */
-    &:not(.active) {
-        display: none;
-    }
+  }
 }

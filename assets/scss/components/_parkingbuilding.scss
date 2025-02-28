@@ -1,32 +1,32 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .parking-building {
-    details {
-        border: none;
-        border-bottom: 1px solid var(--color-tertiary);
-        padding-bottom: rem(16);
+  details {
+    border: none;
+    border-bottom: 1px solid var(--color-tertiary);
+    padding-bottom: rem(16);
 
-        summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+    summary {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
 
-            h2 {
-                display: flex;
-                align-items: center;
-                gap: rem(12);
+      h2 {
+        align-items: center;
+        display: flex;
+        gap: rem(12);
 
-                span {
-                    font-size: rem(14);
-                    font-style: italic;
-                    color: var(--color-secondary);
-                }
-            }
+        span {
+          color: var(--color-secondary);
+          font-size: rem(14);
+          font-style: italic;
         }
-        & > section {
-            border-radius: rem(5);
-            padding: rem(20);
-        }
+      }
     }
+    & > section {
+      border-radius: rem(5);
+      padding: rem(20);
+    }
+  }
 }

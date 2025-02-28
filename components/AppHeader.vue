@@ -5,12 +5,6 @@
                 <div class="header__logo">
                     <h1>Parking Business</h1>
                 </div>
-                <div class="header__menu">
-                    <ul>
-                        <li><NuxtLink href="/">Dashboard</NuxtLink></li>
-                        <li><NuxtLink href="/sessions">Sessions</NuxtLink></li>
-                    </ul>
-                </div>
                 <div class="header__auth">
                     <button class="btn btn--primary" @click="logout">Logout</button>
                 </div>

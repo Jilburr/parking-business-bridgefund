@@ -1,58 +1,63 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .session-overview {
-    &__actions {
-        display: flex;
-        align-items: center;
-        gap: rem(8);
-    }
+  &__actions {
+    align-items: center;
+    display: flex;
+    gap: rem(8);
+  }
 
-    &__filter-toggle {
-        display: flex;
-        justify-content: flex-end;
-    }
+  &__filter-toggle {
+    display: flex;
+    justify-content: flex-end;
+  }
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__view-toggle {
-        display: flex;
-        border: 1px solid var(--color-tertiary);
-        border-radius: rem(8);
-        button {
-            padding: rem(8) rem(12);
-            border-radius: rem(8) 0 0 rem(8);
-            background: none;
-            border: none;
-            cursor: pointer;
-            &.active {
-                background-color: var(--color-secondary);
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__view-toggle {
+    border-radius: rem(8);
+    border: 1px solid var(--color-tertiary);
+    display: flex;
 
-                svg {
-                    path {
-                        fill: var(--color-white);
-                    }
-                }
-            }
-            &:hover {
-                background-color: var(--color-tertiary);
-            }
-            &:active {
-                background-color: var(--color-secondary);
-            }
-            &:last-child {
-                border-radius: 0 rem(8) rem(8) 0;
-            }
+    button {
+      background: none;
+      border-radius: rem(8) 0 0 rem(8);
+      border: none;
+      cursor: pointer;
+      padding: rem(8) rem(12);
+
+      &.active {
+        background-color: var(--color-secondary);
+
+        svg {
+          path {
+            fill: var(--color-white);
+          }
         }
-    }
+      }
 
-    &__loading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: rem(24);
+      &:hover {
+        background-color: var(--color-tertiary);
+      }
+
+      &:active {
+        background-color: var(--color-secondary);
+      }
+
+      &:last-child {
+        border-radius: 0 rem(8) rem(8) 0;
+      }
     }
+  }
+
+  &__loading {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: rem(24);
+  }
 }

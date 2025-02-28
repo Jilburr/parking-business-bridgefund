@@ -1,22 +1,22 @@
-@use '../mixins/rem' as *;
+@use "../mixins/rem" as *;
 
 .section__heading {
-    display: flex;
-    align-items: center;
-    gap: rem(16);
+  align-items: center;
+  display: flex;
+  gap: rem(16);
 }
 
 .container {
-    max-width: 1240px;
-    margin: 0 auto;
+  max-width: 1240px;
+  margin: 0 auto;
 
-    &--margin {
-        margin-top: rem(20);
-        margin-bottom: rem(20);
+  &--margin {
+    margin-bottom: rem(20);
+    margin-top: rem(20);
 
-        @media (min-width: 1024px) {
-            margin-top: rem(40);
-            margin-bottom: rem(40);
-        }
+    @media (min-width: 1024px) {
+      margin-bottom: rem(40);
+      margin-top: rem(40);
     }
+  }
 }
