@@ -134,7 +134,3 @@ const getParkingSpaceName = (parkingSpaceId: number): string => {
     return PARKING_SPACE_NAMES[parkingSpaceId as keyof typeof PARKING_SPACE_NAMES] || 'Unknown';
 };
 </script>
-
-<style scoped>
-
-</style>

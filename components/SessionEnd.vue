@@ -26,7 +26,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { parkingService } from '~/services/parkingService';
 
 const emit = defineEmits(['success']);

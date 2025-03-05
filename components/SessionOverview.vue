@@ -86,8 +86,6 @@
 import type { SessionFilters } from './SessionFilters.vue';
 import { parkingService } from '~/services/parkingService';
 import type { ParkingSession } from '~/services/parkingService';
-import { toastService } from '~/services/toastService';
-import { API_ERRORS } from '~/utils/constants';
 
 const sessions = ref<ParkingSession[]>([]);
 const vehicleTypes = ref<string[]>([]);
@@ -145,9 +143,6 @@ const fetchSessions = async () => {
         vehicleTypes.value = Array.from(
             new Set(sessions.value.map(session => session.vehicleType.toLowerCase()))
         );
-    } catch (error) {
-        toastService.error(API_ERRORS.SESSION_FETCH_FAILED);
-        console.error('Error fetching sessions:', error);
     } finally {
         isLoading.value = false;
     }

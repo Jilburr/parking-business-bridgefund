@@ -2,8 +2,14 @@ import { apiService } from './apiService';
 import { toastService } from './toastService';
 import { API_ERRORS, SUCCESS_MESSAGES, PARKING_RATES } from '~/utils/constants';
 
+// Define API response interface
+export interface ApiResponseSessions {
+  data: {
+    parkingSessions: ApiParkingSessionRaw[];
+  };
+}
 // Define API response session interface
-export interface ApiParkingSession {
+export interface ApiParkingSessionRaw {
   parkingSessionId: string;
   vehicleType: string;
   vehicleLicensePlate: string;
@@ -27,23 +33,45 @@ export interface ParkingSession {
   sessionLengthInHoursMinutes: number;
 }
 
-// Define API response interface
-export interface ApiResponse {
+export interface ApiResponseSpaces {
   data: {
-    parkingSessions: ApiParkingSession[];
+    parkingSpaces: ApiParkingSpace[];
   };
 }
+
+export interface ApiParkingSpace {
+  parkingSpaceId: number;
+  isOccupied: boolean;
+  occupancy: number;
+  capacity: number;
+  vehicleType: string;
+}
+
 
 /**
  * Service for parking-related API calls
  */
 class ParkingService {
   /**
+   * Get all parking spaces
+   */
+  async getSpaces(): Promise<ApiParkingSpace[]> {
+    try {
+      const response = await apiService.get<ApiResponseSpaces>('/parking/spaces/list');
+      return response.data.parkingSpaces;
+    } catch (error) {
+    toastService.error(API_ERRORS.SESSION_FETCH_FAILED);
+      console.error('Error fetching spaces:', error);
+      return [];
+    }
+  }
+
+  /**
    * Get all parking sessions
    */
   async getSessions(): Promise<ParkingSession[]> {
     try {
-      const response = await apiService.get<ApiResponse>('/parking/sessions/list');
+      const response = await apiService.get<ApiResponseSessions>('/parking/sessions/list');
       
       // Process and return the sessions
       return this.processSessions(response.data.parkingSessions);
@@ -78,8 +106,8 @@ class ParkingService {
    * Process raw sessions from API
    */
   
-  private processSessions(rawSessions: ApiParkingSession[]): ParkingSession[] {
-    return rawSessions.map((session: ApiParkingSession): ParkingSession => {
+  private processSessions(rawSessions: ApiParkingSessionRaw[]): ParkingSession[] {
+    return rawSessions.map((session: ApiParkingSessionRaw): ParkingSession => {
       // Parse dates and add rate
       return {
         ...session,

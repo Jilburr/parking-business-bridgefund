@@ -28,7 +28,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 const isLoading = ref(false);
 
 const props = defineProps({

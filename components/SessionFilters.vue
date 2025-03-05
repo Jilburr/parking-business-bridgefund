@@ -76,8 +76,6 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-
 // Define filter interface
 export interface SessionFilters {
     hideEndedSessions: boolean;

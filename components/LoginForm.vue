@@ -21,7 +21,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { loginService } from '~/services/loginSevice';
 
 const email = ref('')

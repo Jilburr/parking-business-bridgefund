@@ -13,7 +13,7 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
     const router = useRouter();
     const logout = () => {
         // Remove the auth token from localStorage

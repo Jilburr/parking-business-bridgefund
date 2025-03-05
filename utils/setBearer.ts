@@ -1,4 +1,4 @@
-import type { ApiResponseLogin } from "../services/loginSevice";
+import type { ApiResponseLogin } from "~/services/loginSevice";
 /**
  * Sets the bearer token in local storage
  * @param data - The token data containing value and expiration time
